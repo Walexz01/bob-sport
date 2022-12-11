@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const customer = require('../server/routes/customers')
+const product = require('../server/routes/products')
 
 
 
@@ -14,6 +15,7 @@ app.use(cors())
 
 
 app.use('/api/customers', customer)
+app.use('/api/products', product)
 
 
 
