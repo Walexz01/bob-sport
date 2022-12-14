@@ -40,8 +40,8 @@ router.get('/:name', async (req,res)=>{
 
 // this is the end point to create order 
 router.post('/create',async (req,res)=>{
-    const {customer_name,status_name,staff_name}  = req.body
-    const result = await createOrder(customer_name,status_name,staff_name)
+    const {customer_name,staff_name}  = req.body
+    const result = await createOrder(customer_name,staff_name)
     res.send(result)
 }) 
 

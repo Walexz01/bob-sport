@@ -137,12 +137,13 @@ async function completedOrders() {
 
 // this is the function to create order (create order and an order item must be insert for the transaction to complete)
 
-async function createOrder(customer_name,status_name,staff_name) {
+async function createOrder(customer_name,staff_name) {
     let [[id]] = await pool.query(`SELECT id 
             FROM customers c 
             WHERE c.customer_name = ?`,[customer_name])
     id = id.id
     // console.log(id)
+    const status_name = 'pending';
 
     let [[status_id]] = await pool.query(`SELECT s.id 
                          FROM status s 

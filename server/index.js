@@ -4,6 +4,7 @@ const customer = require('../server/routes/customers')
 const product = require('../server/routes/products')
 const sales = require('../server/routes/sales')
 const orders = require('../server/routes/orders')
+const payments = require('../server/routes/payment')
 
 
 
@@ -20,6 +21,7 @@ app.use('/api/customers', customer)
 app.use('/api/products', product)
 app.use('/api/sales', sales)
 app.use('/api/orders', orders)
+app.use('/api/payments',payments)
 
 
 
