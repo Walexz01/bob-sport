@@ -1,7 +1,11 @@
 const express = require('express');
 const bcrypt = require("bcrypt")
 const router = express.Router();
+const jwt = require("jsonwebtoken")
 const {getUser,newUser} = require('../data/user')
+const dotenv = require("dotenv")
+dotenv.config()
+
 // this is registration endpoint
 
 router.post('/register',async(req,res)=>{
@@ -30,7 +34,11 @@ router.post('/',async (req, res) => {
     const compare = await bcrypt.compare(password,hashed)
     
     if(!compare) return res.send({error:'incorrect username or password'})
-    res.send('user logged in')
+    const accesToken = jwt.sign({username: user.user_name, id:user.id, role: user.role},process.env.jwtkey)
+    res.cookie("access",accesToken,{
+        maxAge: 60*60*24*30*100,
+    })
+    res.send(accesToken)
 })
 
 

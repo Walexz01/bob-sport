@@ -1,12 +1,13 @@
 const express = require('express');
 const router  = express.Router()
+const validate = require("../middleware/authMiddleware")
 const {getCustomers,getCustomer,createCustomer,updateCustomer,deleteCustomer} = require('../data/customers')
 
 
 //  routes to get the list of customers by calling the getCustomers function that was exported from the subfolder of data called  customer
 
 
-router.get('/', async (req, res)=>{
+router.get('/',validate, async (req, res)=>{
     const result = await getCustomers()
     res.send(result)
 })

@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const cookieparser = require('cookie-parser')
+const helmet = require("helmet")
 const customer = require('../server/routes/customers')
 const product = require('../server/routes/products')
 const sales = require('../server/routes/sales')
@@ -12,6 +14,8 @@ const auth = require('../server/routes/auth')
 
 const cors = require('cors');
 
+app.use(cookieparser())
+app.use(helmet())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
