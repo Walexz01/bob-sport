@@ -1,38 +1,232 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.App{
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 14rem auto;
+}
+img{
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ======================= side bar ======================  */
+.sidebar__container{
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  width: 100%;
+  background: white;
+  height: 100vh;
+  padding: 1rem;
   display: flex;
+  gap: .25rem;
   flex-direction: column;
+}
+
+.sidebar__logo__container{
+  background:rgb(29, 4, 4) ;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 5rem;
+  width: 6rem;
+  margin-inline: auto;
+}
+.sidebar__logo__container > img{
+  scale: 0.55;
 }
 
-.App-link {
-  color: #61dafb;
+
+.sidebar_nav_container {
+  display: flex;  
+  flex-direction: column;
+  gap: .7rem;
+  margin-top: 1.1rem;
+  margin-bottom: .6rem;
+  background: white;
+  width: 100%;
+  padding: .8rem;
+}
+.sidebar_nav_container li{
+  font-size: 1.3rem;
+  transition: 0.2s ease-in;
+  border-radius: .6rem;
+  width: 100%;
+  height: 100%;
+}
+.sidebar_nav_container li a{
+  color: black;
+  font-weight: 250;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  padding: 1rem 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: .6rem;
+}
+ .sidebar_nav_container li .icon{
+  font-size: 1.4rem;
+  margin-right: .7rem;
+ }
+.active_nav{
+  background-color: aliceblue;
+  
+}
+.bottom_logo__container{
+  margin-top: .5rem;  
+  position: relative;
+}
+.bottom_logo{
+  position: absolute;
+  bottom: 6rem;
+  border: .2rem solid white;
+  transform: translateX(50%);
+}
+.details{
+  background: blue ;
+  width: 100%;
+  border-radius: 1.5rem;
+  height: 9rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* =========================  main ============================ */
+.main{
+  height: 100vh;
+  width: 100%;
+  background-color: red;
+}
+
+.topbar_section--container{
+  height: 5rem;
+  width: 100%;
+  background: white; 
+  display: flex;
+  align-items: center;
+}
+.topbar_section{
+  height: 80%;
+  width: 100%;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar_section .toplink{
+  font-size: 2rem;
+  color: black;
+  font-weight:300 ;
+  white-space: nowrap;
+  margin-right: 3rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.toggle__container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+  border: .1rem solid black;
+  border-radius: .7rem;
+  padding: .5rem;
+  gap: 1.4rem;
+  margin-left: 10rem;
+}
+.search_container{
+  position: relative;
+}
+.search_container__icon{
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  margin-left: .5rem;
+  transform: translateY(50%);
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 200;
+}
+
+.search_container input{
+  width: 100%;
+  padding: .9rem;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  height: 70%;
+  outline: none;
+  background: #F0E7D8;
+  border-radius: .5rem;
+  border: none;
+
+}
+.drak__light--toggle{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100%;
+  background: #F0E7D8;
+  position: relative;
+  border-radius: 1rem;
+  padding:.2rem 0.4rem;
+}
+.sun,.moon{
+  z-index: 2;
+  font-size: 1.3rem;
+  position: relative;
+}
+.drak__light--toggle .circle{
+  border-radius: 50%;
+  left: 0%;
+  background: #F6511D;
+  height: 2.5rem;
+  width: 2.5rem;
+  top: -.25rem;
+  position: absolute;
+  z-index: 1;
+}
+.noti{
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left:1rem;
+}
+
+
+
+.user__details{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: row;
+  background: aquamarine ;
+  margin-left: 3.5rem;
+}
+.user__details .name{
+  display: flex;
+  font-size: 1.3rem;
+  align-items: center;
+  background: blue;
+  height: 100%;
+  padding: .7rem;
+}
+.profile__image{
+  background: red;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 4rem;
 }
