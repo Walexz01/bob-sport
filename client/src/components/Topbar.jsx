@@ -4,7 +4,6 @@ import {BiSearch} from 'react-icons/bi'
 import {FaSun} from 'react-icons/fa'
 import {BsBell} from 'react-icons/bs'
 import {BsFillMoonFill} from 'react-icons/bs'
-import logo from '../../src/image/logo.png'
 
 const Topbar = () => {
   return (

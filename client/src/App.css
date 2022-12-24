@@ -8,7 +8,7 @@
 .App{
   display: grid;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   grid-template-columns: 14rem auto;
 }
 img{
@@ -16,24 +16,27 @@ img{
   display: block;
   object-fit: cover;
 }
+body{
+  background: #f3f3ff;
+
+}
 
 /* ======================= side bar ======================  */
 .sidebar__container{
-  width: 100%;
-  height: 100vh;
   background: white;
-  display: fixed;
+  z-index: 22;
+  position: relative;
 }
 
 
 nav{
-  width: 100%;
   background: white;
   height: 100vh;
   padding: 1rem;
   display: flex;
   gap: .25rem;
   flex-direction: column;
+  position:fixed ;
 }
 
 .sidebar__logo__container{
@@ -83,11 +86,11 @@ nav{
   margin-right: .7rem;
  }
 .active_nav{
-  background-color: aliceblue;
+  background-color: #e6e8ff;
   
 }
 .bottom_logo__container{
-  margin-top: .5rem;  
+  bottom: -5rem;  
   position: relative;
 }
 .bottom_logo{
@@ -106,9 +109,7 @@ nav{
 
 /* =========================  main ============================ */
 .main{
-  height: 100vh;
   width: 100%;
-  background-color: red;
 }
 
 .topbar_section--container{
@@ -117,6 +118,8 @@ nav{
   background: white; 
   display: flex;
   align-items: center;
+  position: fixed;
+  z-index: 22;
 }
 .topbar_section{
   height: 80%;
@@ -169,7 +172,7 @@ nav{
   padding-left: 2rem;
   height: 70%;
   outline: none;
-  background: #F0E7D8;
+  background: #e6e8ff;
   border-radius: .5rem;
   border: none;
 
@@ -179,7 +182,7 @@ nav{
   align-items: center;
   gap: 1.5rem;
   height: 100%;
-  background: #F0E7D8;
+  background: #d3cec7;
   position: relative;
   border-radius: 1rem;
   padding:.2rem 0.4rem;
@@ -192,7 +195,7 @@ nav{
 .drak__light--toggle .circle{
   border-radius: 50%;
   left: 0%;
-  background: #F6511D;
+  background: rgb(212, 184, 184);
   height: 2.5rem;
   width: 2.5rem;
   top: -.25rem;
@@ -229,4 +232,7 @@ nav{
   padding: 0;
   height: 100%;
   width: 4rem;
+}
+.text{
+  margin-top: 5rem;
 }

@@ -23,10 +23,10 @@ const Sidebar = () => {
             </ul>
 
             <div className="bottom_logo__container">
-            <div className='sidebar__logo__container bottom_logo'>
-                <img src={logo} alt="" />
-            </div>
-                <div className='details'></div>
+                <div className='sidebar__logo__container bottom_logo'>
+                    <img src={logo} alt="" />
+                </div>
+                    <div className='details'></div>
             </div>
         
     </nav>
