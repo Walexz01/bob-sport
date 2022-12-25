@@ -1,0 +1,78 @@
+.home_page_container{
+    display: grid;
+    grid-template-columns: auto 30rem;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.right__top__container{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.5rem;
+    padding: 4rem 0 1rem 0;
+}
+.card__title{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    height: 2.5rem;
+}
+.card__title span{
+    font-size: 1.5rem;
+    padding: .5rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius:  .5rem;
+    box-shadow: var(--icon__shadow);
+}
+.card__title{
+    font-size: 1.5rem;
+    color: var(--color__muted);
+    font-weight: 500;
+}
+
+.card__details{
+    padding-top: 1.5rem;
+}
+
+.card__detail{
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__details{
+    font-size: 1.2rem;
+    font-weight: 550;
+}
+.sold__products_cards .card__title span{
+    background: #b6f1b3;
+    color: #547053;
+}
+.ordered__products_cards .card__title span{
+    background: #b8cbe3;
+    color: #394757;
+}
+.cancel_orders_cards .card__title span{
+    background: #fba6a2c2;
+    color: #c7585a;
+}
+
+
+.circle{
+    width: 6rem;
+    cursor: pointer;
+    height: 7rem;
+}
+.CircularProgressbar-text{
+    transform: translateX(-15%) !important;
+    font-size: 1.6rem !important;
+    font-weight: 500;
+}
+
+
+.circular__progress{
+text-align: center;
+}

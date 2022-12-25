@@ -5,6 +5,12 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+:root{
+  --card__shadow: 0rem 0rem 1rem rgba(87, 84, 84, 0.39);
+  --icon__shadow: 0rem 0rem .5rem #c4ccdd;
+  --color__muted:rgba(0, 0, 0, 0.473);
+
+}
 .App{
   display: grid;
   height: 100vh;
@@ -233,6 +239,15 @@ nav{
   height: 100%;
   width: 4rem;
 }
-.text{
+.page_container{
   margin-top: 5rem;
+}
+
+
+/* this is the style for the card component */
+.card{
+  background: white;
+  border-radius: .6rem;
+  box-shadow: var(--card__shadow);
+  padding: 1rem;
 }
