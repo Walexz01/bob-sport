@@ -9,6 +9,11 @@
   --card__shadow: 0rem 0rem 1rem rgba(87, 84, 84, 0.39);
   --icon__shadow: 0rem 0rem .5rem #c4ccdd;
   --color__muted:rgba(0, 0, 0, 0.473);
+  --color__success:#15a336;
+  --color__pending:#f5a633;
+  --color__cancel:#EB0000;
+  --color__link:#394757;
+  --card__radius:.6rem;
 
 }
 .App{
@@ -21,6 +26,9 @@ img{
   width: 100%;
   display: block;
   object-fit: cover;
+}
+a{
+  color: var(--color__link);
 }
 body{
   background: #f3f3ff;
@@ -247,7 +255,7 @@ nav{
 /* this is the style for the card component */
 .card{
   background: white;
-  border-radius: .6rem;
+  border-radius: var(--card__radius);
   box-shadow: var(--card__shadow);
   padding: 1rem;
 }
