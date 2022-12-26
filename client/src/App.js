@@ -19,7 +19,7 @@ function App() {
         </div>
         <div className='main'>
           <Topbar/>
-          <div className="text">
+          <div className="page_container">
             <Routes>
               {/* pages routes */}
               <Route path='/' element={<Home/>}/>

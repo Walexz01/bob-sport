@@ -6,11 +6,10 @@
 }
 
 .right__top__container{
-    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 2.5rem;
-    padding: 4rem 0 1rem 0;
+    padding: 0rem 0 1rem 0;
 }
 .card__title{
     display: flex;
