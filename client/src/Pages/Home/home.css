@@ -76,8 +76,8 @@
 text-align: center;
 }
 
-/* recent orders */
-.recent__orders{
+/* table__container */
+.table__container{
     background: #fff;
     border-radius: var(--card__radius);
     padding: 1rem;
@@ -87,16 +87,16 @@ text-align: center;
     cursor: pointer;
 
 }
-.recent__orders--top{
+.table__container--top{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.recent__orders h2{
+.table__container h2{
     font-size: 1.1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.recent__orders--top a{
+.table__container--top a{
     font-size: 1.2rem;
     font-weight: 600;
     border-bottom: .1rem dotted black;
