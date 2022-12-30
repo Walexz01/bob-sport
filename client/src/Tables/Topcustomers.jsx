@@ -1,11 +1,11 @@
 import React from 'react'
 import Topcusbody from '../components/Topcusbody'
-import Tablecontainer from '../UI/Card/Tablecontainer'
+import Tablecontainer from '../UI/Tablecontainer'
 
 const Topcustomers = () => {
   return (
     <>
-        <Tablecontainer className='top__customers' table_name= 'Top Customers' path='customers'>
+        <Tablecontainer className='top__customers' table_name= 'Top 10 Customers' >
             <table>
                 <thead>
                   <tr>

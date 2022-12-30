@@ -9,6 +9,7 @@ import Sales from './Pages/Sales/Sales';
 import Payments from './Pages/Payments/Payments';
 import Products from './Pages/Products/Products';
 import NotFound from './Pages/NotFound/NotFound'
+import Newcustomer from './components/Newcustomer';
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
               {/* pages routes */}
               <Route path='/' element={<Home/>}/>
               <Route path='customers' element={<Customers/>}/>
+              <Route path='customers/create' element={<Newcustomer/>}/>
               <Route path='orders' element={<Orders/>}/>
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>

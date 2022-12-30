@@ -1,11 +1,11 @@
 import React from 'react'
 import Topprobody from '../components/Topprobody'
-import Tablecontainer from '../UI/Card/Tablecontainer'
+import Tablecontainer from '../UI/Tablecontainer'
 
 const Topproducts = () => {
   return (
     <>
-        <Tablecontainer className='top__products' table_name= 'Top Products' path='products'>
+        <Tablecontainer className='top__products' table_name= 'Top 10 Products' >
             <table>
                 <thead>
                   <tr>

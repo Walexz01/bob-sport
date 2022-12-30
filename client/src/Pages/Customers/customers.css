@@ -1,0 +1,91 @@
+.customer__container{
+    padding: 1rem;
+}
+.customer__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cuustomer__title{
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.customer__link{
+    color: white;
+    background-color:orange;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border-radius: var(--card__radius);
+    box-shadow: var(--card__shadow);
+    transition: all .5s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.customer__link:hover{
+    box-shadow: none;
+}
+.customer__table__container--top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.input__group{
+    background-color: white;
+    border: .2rem solid var(--color__muted);
+    outline: none;
+    border-radius: var(--card__radius);
+    padding: .2rem .4rem;
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+    position: relative;
+}
+.input__group input{
+    font-size: 1.2rem;
+    border: none;
+    padding: .2rem .4rem;
+    outline: none;
+}
+.input__group svg{
+    font-size: 1.3rem;
+    color: var(--color__muted);
+}
+.customer__bottom{
+    margin-top: 1.3rem;
+}
+.customer__table{
+    margin-top: 1rem;
+}
+/* ===========================create__customer--container ================= */
+.create__customer--container{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.create__customer--form{
+    background: white;
+    border-radius: var(--card__radius);
+    box-shadow: var(--card__shadow);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    height: 20rem;
+}
+.create__customer--form input{
+    outline: none;
+    font-size: 1.2rem;
+    padding: .4rem .6rem;
+    border-radius: var(--card__radius);
+}
+.create__customer--form button{
+    background: none;
+    border: .3rem solid yellow;
+    border-radius: var(--card__radius);
+    padding: .4rem .2rem;
+    font-size: 1.4rem;
+}

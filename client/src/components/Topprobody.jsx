@@ -8,7 +8,7 @@ const Topprobody = () => {
             {
                 Topproducts.map(({id,Name,Total_purchase,Unit_price})=>{
                     return(
-                    <tr>
+                    <tr key={id}>
                         <td>{id}</td>
                         <td>{Name}</td>
                         <td>{Total_purchase}</td>

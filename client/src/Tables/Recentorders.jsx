@@ -1,11 +1,11 @@
 import React from 'react'
 import Ordertablebody from '../components/Ordertablebody'
-import Tablecontainer from '../UI/Card/Tablecontainer'
+import Tablecontainer from '../UI/Tablecontainer'
 
 const Recentorders = () => {
   return (
     <>
-      <Tablecontainer className='recent__orders' table_name= 'Recent Orders' path='orders'>
+      <Tablecontainer className='recent__orders' table_name= 'Recent Orders' path='orders' more='See All'>
                 <table>
                     <thead>
                       <tr>

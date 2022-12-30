@@ -1,6 +1,6 @@
 import React from 'react'
 import Progress from '../components/Progress'
-import Card from '../UI/Card/Card'
+import Card from '../UI/Card'
 
 
 const Storeinfocard = ({className,icon,title,total,cost,percentage,trailColor,pathColor}) => {
