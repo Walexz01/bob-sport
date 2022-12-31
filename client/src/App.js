@@ -10,6 +10,10 @@ import Payments from './Pages/Payments/Payments';
 import Products from './Pages/Products/Products';
 import NotFound from './Pages/NotFound/NotFound'
 import Newcustomer from './components/Newcustomer';
+import Allorders from './components/Allorders';
+import Pendingorders from './components/Pendingorders';
+import Completedorders from './components/Completedorders';
+import Canceledorders from './components/Canceledorders';
 function App() {
 
   return (
@@ -26,7 +30,14 @@ function App() {
               <Route path='/' element={<Home/>}/>
               <Route path='customers' element={<Customers/>}/>
               <Route path='customers/create' element={<Newcustomer/>}/>
-              <Route path='orders' element={<Orders/>}/>
+
+              <Route path='orders' element={<Orders/>}>
+                <Route path='all-orders' element={<Allorders/>}/>
+                <Route path='pending-orders' element={<Pendingorders/>} />
+                <Route path='completed-order' element={<Completedorders/>} />
+                <Route path='canceled-order' element={<Canceledorders/>} />
+              </Route>
+
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>
               <Route path='products' element={<Products/>}/>

@@ -1,30 +1,6 @@
 .customer__container{
     padding: 1rem;
 }
-.customer__top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.cuustomer__title{
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.customer__link{
-    color: white;
-    background-color:orange;
-    padding: .5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 300;
-    border-radius: var(--card__radius);
-    box-shadow: var(--card__shadow);
-    transition: all .5s ease;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.customer__link:hover{
-    box-shadow: none;
-}
 .customer__table__container--top{
     display: flex;
     align-items: center;
@@ -62,7 +38,8 @@
 .create__customer--container{
     display: grid;
     place-items: center;
-    height: 100vh;
+    height:calc(100vh - 5rem);
+    box-sizing: border-box;
 }
 .create__customer--form{
     background: white;
@@ -88,6 +65,12 @@
     padding: .4rem .2rem;
     font-size: 1.4rem;
     outline: none;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+.create__customer--form button:hover{
+    border: .1rem solid orange;
+    background: white;
 }
 .form__top{
     font-size: 2rem;

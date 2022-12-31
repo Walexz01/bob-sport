@@ -18,7 +18,7 @@ const Newcustomer = () => {
     navigate('/customers')
     event.preventDefault();
   }
-  
+
   return (
     <div className='create__customer--container'>
       <form className='create__customer--form' onSubmit={handleSubmit}>

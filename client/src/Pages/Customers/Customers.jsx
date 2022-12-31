@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import Tablecontainer from '../../UI/Tablecontainer'
 import {BiSearch} from 'react-icons/bi'
 import { useState } from 'react'
+import Pagetop from '../../components/Pagetop'
 
 
 const Customers = () => {
@@ -14,16 +15,15 @@ const Customers = () => {
   }
   return (
     <div className='customer__container'>
-      <div className="customer__top">
-        <div className="cuustomer__title">Customers</div>
-        <Link className='customer__link' to='create'>New Customer</Link>
-      </div>
+      {/* This is  the top of the page with containes the name of the page and the link to the appropriate page */}
+      <Pagetop path='create' className='customer__top' title = 'Customers' link_name ='New Customer'/>
+
       <div className="customer__bottom">
         <Tablecontainer className='customer__table__container'>
           <div className="customer__table__container--top">
             <div className="input__group">
               <BiSearch/>
-              <input type="text" value={input} onChange={handleInput} placeholder='Search' />
+              <input type="search" name='search' value={input} onChange={handleInput} placeholder='Search....' />
             </div>
             <div className="icon__filter"> filter icon</div>
           </div>
