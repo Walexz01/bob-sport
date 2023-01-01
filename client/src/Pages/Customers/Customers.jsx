@@ -15,10 +15,9 @@ const Customers = () => {
 
     useEffect(() => {
         async function getAllCustomers(){
-            const result = await axios.get('http://localhost:3000/api/customers')
-            try {
+          try {
+              const result = await axios.get('http://localhost:3000/api/customers')
                 setcustomerList(result.data)
-                console.log(result.data)
             } catch (error) {
                 console.log(error)
                 
