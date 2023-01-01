@@ -28,7 +28,7 @@ const Customerbody = ({customerList,input}) => {
                   <td>{address}</td>
                   <td>{date}</td>
                   <td>{time} {am__pm >=0 && am__pm <= 11 ? 'AM': 'PM'}</td>
-                  <td><Link to={`/orders/list/${customer_name}`}>View Orders </Link></td>
+                  <td><Link to={`/orders/list/${id}/${customer_name}`}>View Orders </Link></td>
                 </tr>
                 )
             })

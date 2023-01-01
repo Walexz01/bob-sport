@@ -8,8 +8,8 @@ const Topcusbody = () => {
   const [topCustomer, setTopCustomer] = useState([])
   useEffect(() => {
     async function topCustomer(){
-      const result = await axios.get('http://localhost:3000/api/customers/top')
       try {
+        const result = await axios.get('http://localhost:3000/api/customers/top')
         setTopCustomer(result.data)
       } catch (error) {
         console.log(error)
@@ -27,7 +27,7 @@ const Topcusbody = () => {
                     <td>{id}</td>
                     <td>{customer_name}</td>
                     <td>{total_order}</td>
-                    <td><Link to={`orders/list/${customer_name}`}>Details</Link></td>
+                    <td><Link to={`orders/list/${id}/${customer_name}`}>Details</Link></td>
                 </tr>
                 )
             })

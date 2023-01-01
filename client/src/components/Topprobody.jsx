@@ -8,8 +8,8 @@ const Topprobody = () => {
     const [topProducts, settopProducts] = useState([])
     useEffect(() => {
       async function getTopProducts(){
-        const result = await axios.get('http://localhost:3000/api/products/top')
         try {
+          const result = await axios.get('http://localhost:3000/api/products/top')
             settopProducts(result.data)
         } catch (error) {
             console.log(error)

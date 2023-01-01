@@ -14,8 +14,8 @@ const Ordertablebody = () => {
   console.log(list)
   useEffect(() => {
     async function getOrders(){
-      const result = await axios.get('http://localhost:3000/api/orders')
       try {
+        const result = await axios.get('http://localhost:3000/api/orders')
         setordersLists(result.data)
         
       } catch (error) {

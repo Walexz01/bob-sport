@@ -39,7 +39,7 @@ function App() {
                 <Route path='completed-order' element={<Completedorders/>} />
                 <Route path='canceled-order' element={<Canceledorders/>} />
               </Route>
-              <Route path='orders/list/:name' element={<Orderslist/>}/>
+              <Route path='orders/list/:id/:name' element={<Orderslist/>}/>
 
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>

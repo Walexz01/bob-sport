@@ -7,15 +7,13 @@ import Statustd from '../UI/Statustd'
 import Tablecontainer from '../UI/Tablecontainer'
 
 const Orderslist = () => {
-    const {name}= useParams()
+    const {id,name}= useParams()
     const [orderLists, setorderLists] = useState([])
-    const [id, setid] = useState()
     useEffect(() => {
         async function ordersByNAme(){
             const result = await axios.get(`http://localhost:3000/api/orders/${name}`)
             try {
                 setorderLists(result.data)
-                setid(result.data[0].id)
             } catch (error) {
                 console.log(error)
             }
