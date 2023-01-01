@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router()
 
-const  {getAllProducts,getProductByName,deleteProduct,updateProducts,createproduct} = require('../data/products')
+const  {getAllProducts,getProductByName,deleteProduct,updateProducts,createproduct,getTopProducts} = require('../data/products')
 
 // this is sthe route to get the lists of all products 
 
@@ -10,6 +10,10 @@ router.get('/',async (req,res)=>{
     res.send(result)
 })
 
+router.get('/top', async (req,res)=>{
+    const result = await getTopProducts()
+    res.send(result)
+})
 
 //  this is the router to get the produuct by passing their name as a search params
 

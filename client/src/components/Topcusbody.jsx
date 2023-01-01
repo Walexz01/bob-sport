@@ -1,18 +1,33 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Topcustomers } from '../data'
+// import { Topcustomers } from '../data'
 
 const Topcusbody = () => {
+  const [topCustomer, setTopCustomer] = useState([])
+  useEffect(() => {
+    async function topCustomer(){
+      const result = await axios.get('http://localhost:3000/api/customers/top')
+      try {
+        setTopCustomer(result.data)
+      } catch (error) {
+        console.log(error)
+        
+      }
+    }
+    topCustomer()
+  }, [])
   return (
     <>
         <tbody>
-            { Topcustomers.map(({id,Customer_name,Total_order})=>{
+            { topCustomer.map(({id, customer_name,total_order})=>{
                 return(
                 <tr key={id}>
                     <td>{id}</td>
-                    <td>{Customer_name}</td>
-                    <td>{Total_order}</td>
-                    <td><Link to='/'>Details</Link></td>
+                    <td>{customer_name}</td>
+                    <td>{total_order}</td>
+                    <td><Link to={`orders/${id}`}>Details</Link></td>
                 </tr>
                 )
             })

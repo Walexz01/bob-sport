@@ -5,7 +5,7 @@ import Tablecontainer from '../UI/Tablecontainer'
 const Topcustomers = () => {
   return (
     <>
-        <Tablecontainer className='top__customers' table_name= 'Top 10 Customers' >
+        <Tablecontainer className='top__customers' table_name= 'Top 10 Customers'>
             <table>
                 <thead>
                   <tr>

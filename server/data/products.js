@@ -12,6 +12,29 @@ async function getAllProducts() {
     
 }
 
+async function getTopProducts() {
+    const query =`SELECT 
+    p.id,
+    p.name,
+    SUM(op.quantity) AS total_quantity_purchased,
+    COUNT(op.product_id) AS number_of_times_purchased,
+    op.unit_price AS unit_price
+FROM
+    products p
+        JOIN
+        order_products op 
+            ON op.product_id = p.id
+GROUP BY op.product_id
+HAVING total_quantity_purchased
+    AND number_of_times_purchased > 0
+ORDER BY total_quantity_purchased
+LIMIT 10`
+    const [result] = await pool.query(query)
+    return(result)
+    
+}
+
+
 // getAllProducts()
 
 
@@ -72,6 +95,7 @@ module.exports.getProductByName = getProductByName;
 module.exports.deleteProduct = deleteProduct; 
 module.exports.updateProducts = updateProducts; 
 module.exports.createproduct = createproduct;
+module.exports.getTopProducts = getTopProducts;
 
 
 

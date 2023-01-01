@@ -1,18 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { TableData } from '../data'
+// import { TableData } from '../data'
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
 const Ordertablebody = () => {
+  const [ordersLists, setordersLists] = useState([])
+  useEffect(() => {
+    async function getOrders(){
+      const result = await axios.get('http://localhost:3000/api/orders')
+      try {
+        setordersLists(result.data)
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getOrders()
+    
+  }, [])
+  const recentOrders = ordersLists.slice(0,10)
+  
   return (
         <>
           <tbody>
         {
-          TableData.map(({Order_id,Customer_name,Total_amount,Status_name})=>{
+          recentOrders.map(({id,customer_name,total_amount,status_name})=>{
             return(
-                <tr key={Order_id}>
-                  <td>{Order_id}</td>
-                  <td>{Customer_name}</td>
-                  <td>{Total_amount}</td>
-                  <td><small  className={`${Status_name} == "pending"? 'pending'?${Status_name}=="completed"? 'completed': 'cancel'`}>{Status_name}</small></td>
+                <tr key={id}>
+                  <td>{id}</td>
+                  <td>{customer_name}</td>
+                  <td>{total_amount}</td>
+                  <td><small  className={`${status_name} == "pending"? 'pending'?${status_name}=="completed"? 'completed': 'cancel'`}>{status_name}</small></td>
                   <td><Link>Details</Link></td>
                 </tr>
             )

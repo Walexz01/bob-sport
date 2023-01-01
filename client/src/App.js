@@ -32,6 +32,7 @@ function App() {
               <Route path='customers/create' element={<Newcustomer/>}/>
 
               <Route path='orders' element={<Orders/>}>
+                <Route index element={<Allorders/>}/>
                 <Route path='all-orders' element={<Allorders/>}/>
                 <Route path='pending-orders' element={<Pendingorders/>} />
                 <Route path='completed-order' element={<Completedorders/>} />

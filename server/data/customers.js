@@ -63,6 +63,22 @@ async function deleteCustomer(customer_name) {
      await pool.query(query,[customer_name])   
 }
 
+async function getTopCustomer(){
+    const query = `
+    SELECT 
+    c.id, customer_name, address, COUNT(o.customer_id) AS total_order
+FROM
+    customers c
+        LEFT JOIN
+    orders o ON c.id = o.customer_id
+GROUP BY o.customer_id
+HAVING total_order > 0
+ORDER BY total_order
+LIMIT 10
+`
+    const [result] = await pool.query(query)
+    return result
+}
 
 
 
@@ -77,6 +93,7 @@ module.exports.createCustomer = createCustomer;
 module.exports.updateCustomer = updateCustomer
 
 module.exports.deleteCustomer = deleteCustomer;
+module.exports.getTopCustomer = getTopCustomer;
 
 
 

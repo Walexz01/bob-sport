@@ -1,14 +1,19 @@
 const express = require('express');
 const router  = express.Router()
 const validate = require("../middleware/authMiddleware")
-const {getCustomers,getCustomer,createCustomer,updateCustomer,deleteCustomer} = require('../data/customers')
+const {getCustomers,getCustomer,createCustomer,updateCustomer,deleteCustomer,getTopCustomer} = require('../data/customers')
 
 
 //  routes to get the list of customers by calling the getCustomers function that was exported from the subfolder of data called  customer
 
 
-router.get('/',validate, async (req, res)=>{
+router.get('/', async (req, res)=>{
     const result = await getCustomers()
+    res.send(result)
+})
+
+router.get('/top', async (req,res)=>{
+    const result = await getTopCustomer()
     res.send(result)
 })
 
@@ -52,7 +57,6 @@ router.delete('/:name',async (req,res)=>{
     deleteCustomer(req.params.name)
     res.send('successful')
 })
-
 
 
 
