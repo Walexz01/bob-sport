@@ -1,10 +1,10 @@
 import React from 'react'
 import "./customers.css"
-import {Link} from 'react-router-dom'
 import Tablecontainer from '../../UI/Tablecontainer'
 import {BiSearch} from 'react-icons/bi'
 import { useState } from 'react'
 import Pagetop from '../../components/Pagetop'
+import Customerbody from '../../components/Customerbody'
 
 
 const Customers = () => {
@@ -38,49 +38,7 @@ const Customers = () => {
                 <th> </th>
               </tr>
             </thead>
-            <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
-                  <td>2022562</td>
-                  <td>2022562</td>
-                  <td><Link to='/orders/list/walexz'>View Orders </Link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
-                  <td>2022562</td>
-                  <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
-                  <td>2022562</td>
-                  <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
-                  <td>2022562</td>
-                  <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
-                  <td>2022562</td>
-                  <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
-                </tr>
-              </tbody>
-
+            <Customerbody/>
           </table>
         </Tablecontainer>
       </div>

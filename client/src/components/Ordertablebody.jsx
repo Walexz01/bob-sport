@@ -7,7 +7,11 @@ import { useState } from 'react';
 import Statustd from '../UI/Statustd';
 
 const Ordertablebody = () => {
-  const [ordersLists, setordersLists] = useState([])
+  let [ordersLists, setordersLists] = useState([])
+  const list = ordersLists.sort((a,b) =>{
+   return b.id - a.id
+  })
+  console.log(list)
   useEffect(() => {
     async function getOrders(){
       const result = await axios.get('http://localhost:3000/api/orders')
@@ -21,7 +25,7 @@ const Ordertablebody = () => {
     getOrders()
     
   }, [])
-  const recentOrders = ordersLists.slice(0,10)
+  const recentOrders = list.slice(0,10)
   
   return (
         <>
