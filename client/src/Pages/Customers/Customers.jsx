@@ -5,14 +5,33 @@ import {BiSearch} from 'react-icons/bi'
 import { useState } from 'react'
 import Pagetop from '../../components/Pagetop'
 import Customerbody from '../../components/Customerbody'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 
 const Customers = () => {
-  const [input, setInput] = useState(' ');
-  const handleInput= (e)=>{
-    setInput(e.target.value)
+  const [input, setInput] = useState('');
+  const [customerList, setcustomerList] = useState([])
 
-  }
+    useEffect(() => {
+        async function getAllCustomers(){
+            const result = await axios.get('http://localhost:3000/api/customers')
+            try {
+                setcustomerList(result.data)
+                console.log(result.data)
+            } catch (error) {
+                console.log(error)
+                
+            }
+        }
+        getAllCustomers()
+    }, [])
+
+    const handleInput= (e)=>{
+      setInput(e.target.value)
+    }
+  
+  
   return (
     <div className='customer__container'>
       {/* This is  the top of the page with containes the name of the page and the link to the appropriate page */}
@@ -38,7 +57,7 @@ const Customers = () => {
                 <th> </th>
               </tr>
             </thead>
-            <Customerbody/>
+            <Customerbody customerList={customerList} input={input}/>
           </table>
         </Tablecontainer>
       </div>
