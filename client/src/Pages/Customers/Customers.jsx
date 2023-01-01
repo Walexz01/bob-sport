@@ -34,6 +34,7 @@ const Customers = () => {
                 <th>Name</th>
                 <th>Address</th>
                 <th>Registration Date</th>
+                <th>Registration Time</th>
                 <th> </th>
               </tr>
             </thead>
@@ -43,12 +44,14 @@ const Customers = () => {
                   <td>Walexz</td>
                   <td>iseyin</td>
                   <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
+                  <td>2022562</td>
+                  <td><Link to='/orders/list/walexz'>View Orders </Link></td>
                 </tr>
                 <tr>
                   <td>1</td>
                   <td>Walexz</td>
                   <td>iseyin</td>
+                  <td>2022562</td>
                   <td>2022562</td>
                   <td><Link>View Orders </Link></td>
                 </tr>
@@ -57,12 +60,6 @@ const Customers = () => {
                   <td>Walexz</td>
                   <td>iseyin</td>
                   <td>2022562</td>
-                  <td><Link>View Orders </Link></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Walexz</td>
-                  <td>iseyin</td>
                   <td>2022562</td>
                   <td><Link>View Orders </Link></td>
                 </tr>
@@ -70,6 +67,15 @@ const Customers = () => {
                   <td>1</td>
                   <td>Walexz</td>
                   <td>iseyin</td>
+                  <td>2022562</td>
+                  <td>2022562</td>
+                  <td><Link>View Orders </Link></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Walexz</td>
+                  <td>iseyin</td>
+                  <td>2022562</td>
                   <td>2022562</td>
                   <td><Link>View Orders </Link></td>
                 </tr>

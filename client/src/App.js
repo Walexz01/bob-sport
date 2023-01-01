@@ -14,6 +14,7 @@ import Allorders from './components/Allorders';
 import Pendingorders from './components/Pendingorders';
 import Completedorders from './components/Completedorders';
 import Canceledorders from './components/Canceledorders';
+import Orderslist from './components/Orderslist';
 function App() {
 
   return (
@@ -38,6 +39,7 @@ function App() {
                 <Route path='completed-order' element={<Completedorders/>} />
                 <Route path='canceled-order' element={<Canceledorders/>} />
               </Route>
+              <Route path='orders/list/:name' element={<Orderslist/>}/>
 
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>

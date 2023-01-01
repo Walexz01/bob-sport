@@ -27,7 +27,7 @@ const Topcusbody = () => {
                     <td>{id}</td>
                     <td>{customer_name}</td>
                     <td>{total_order}</td>
-                    <td><Link to={`orders/${id}`}>Details</Link></td>
+                    <td><Link to={`orders/list/${customer_name}`}>Details</Link></td>
                 </tr>
                 )
             })

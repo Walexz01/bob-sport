@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Statustd from '../UI/Statustd';
+
 const Ordertablebody = () => {
   const [ordersLists, setordersLists] = useState([])
   useEffect(() => {
@@ -31,7 +33,8 @@ const Ordertablebody = () => {
                   <td>{id}</td>
                   <td>{customer_name}</td>
                   <td>{total_amount}</td>
-                  <td><small  className={`${status_name} == "pending"? 'pending'?${status_name}=="completed"? 'completed': 'cancel'`}>{status_name}</small></td>
+                  <Statustd status_name= {status_name}/>
+                  {/* <td><small  className={`${status_name} == "pending"? 'pending'?${status_name}=="completed"? 'completed': 'cancel'`}>{status_name}</small></td> */}
                   <td><Link>Details</Link></td>
                 </tr>
             )

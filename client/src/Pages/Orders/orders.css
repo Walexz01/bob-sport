@@ -40,3 +40,30 @@
     background: linear-gradient(#e91e63,#673ab7);
 
 }
+
+.orderlist__container{
+    padding: 1rem;
+}
+.customer__details{
+    background: white;
+    padding: 1rem;
+    border-radius: var(--card__radius);
+    box-shadow: var(--card__shadow);
+
+}
+.customer__details--bottom{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.customer__detail{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.customer__detail span, .customer__detail h3{
+    font-size: 1.2rem ;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
