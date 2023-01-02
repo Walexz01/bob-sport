@@ -15,6 +15,7 @@ import Pendingorders from './components/Pendingorders';
 import Completedorders from './components/Completedorders';
 import Canceledorders from './components/Canceledorders';
 import Orderslist from './components/Orderslist';
+import Itemsordered from './components/Itemsordered';
 function App() {
 
   return (
@@ -40,6 +41,7 @@ function App() {
                 <Route path='canceled-order' element={<Canceledorders/>} />
               </Route>
               <Route path='orders/list/:id/:name' element={<Orderslist/>}/>
+              <Route path='orders/items/:id/:name/:date/:t_amount/:s_name/:u_name' element={<Itemsordered/>}/>
 
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>

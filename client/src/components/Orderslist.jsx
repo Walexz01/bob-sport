@@ -23,18 +23,18 @@ const Orderslist = () => {
     const length = orderLists.length    
   return (
     <div className='orderlist__container'>
-        <div className="customer__details">
+        <div className="customer__details orders__details--top">
             <div className="customer__details--top">
                 <h2>Customer Details</h2>
             </div>
-            <div className="customer__details--bottom">
-                <div className="customer__detail">
+            <div className="customer__details--bottom orders__details--bottom">
+                <div className="customer__detail orders__details--group">
                     <span>Customer Id :</span><h3>{id}</h3>
                 </div>
-                <div className="customer__detail">
+                <div className="customer__detail orders__details--group">
                     <span>Customer Name :</span><h3>{name}</h3>
                 </div>
-                <div className="customer__detail">
+                <div className="customer__detail orders__details--group">
                     <span>Total Orders :</span><h3>{length}</h3>
                 </div>
             </div>
@@ -65,12 +65,12 @@ const Orderslist = () => {
                                 <tr key={id}>
                                     <td>{id}</td>
                                     <td>{customer_name}</td>
-                                    <td>{total_amount}</td>
+                                    <td>${total_amount}</td>
                                     <td>{date}</td>
                                     <td>{time} {am__pm >=0 && am__pm <= 11 ? 'AM': 'PM'}</td>
                                     <Statustd status_name={status_name}/>
                                     <td>{user_name}</td>
-                                    <td><Link>Details</Link></td>
+                                    <td><Link to={`/orders/items/${id}/${customer_name}/${date}/${total_amount}/${status_name}/${user_name}`}>Details</Link></td>
                                 </tr>
                             )
                         })

@@ -23,31 +23,31 @@ async function allSales() {
 }
 async function getOrderProductsById(order_id){
     const query = `SELECT 
-                    order_id,
-                    product_id,
-                    quantity,
-                    op.unit_price,
-                    (quantity * op.unit_price) AS total_cost,
-                    customer_id,
-                    order_date,
-                    total_amount,
-                    p.name,
-                    c.customer_name,
-                    s.name,
-                    u.user_name
-                    FROM
-                    order_products op
-                        JOIN
-                    orders o ON order_id = o.id
-                        JOIN
-                    products p ON product_id = p.id
-                        JOIN
-                    customers c ON c.id = o.customer_id
-                        JOIN
-                    status s ON status_id = s.id
-                        JOIN
-                    users u ON u.id = user_id
-                    WHERE order_id = ?`
+    order_id,
+    product_id,
+    quantity,
+    op.unit_price,
+    (quantity * op.unit_price) AS total_cost,
+    customer_id,
+    order_date,
+    total_amount,
+    p.name AS item_name,
+    c.customer_name,
+    s.name AS status_name,
+    u.user_name
+FROM
+    order_products op
+        JOIN
+    orders o ON order_id = o.id
+        JOIN
+    products p ON product_id = p.id
+        JOIN
+    customers c ON c.id = o.customer_id
+        JOIN
+    status s ON status_id = s.id
+        JOIN
+    users u ON u.id = user_id
+    WHERE order_id = ?`
     const [result] = await pool.query(query,[order_id]) 
     return result;
 }
