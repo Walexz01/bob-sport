@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import { TableData } from '../data'
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';

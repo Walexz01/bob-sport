@@ -48,7 +48,7 @@ async function orderById(order_id) {
                     status s ON o.status_id = s.id
                     JOIN users u
                     ON u.id = o.user_id
-                    WHERE o.id = ?
+                    WHERE customer_id = ?
                     `
     const [result] = await pool.query(query,[order_id])
     return result
@@ -203,6 +203,7 @@ async function addproducts(order_id,product_name,quantity) {
 
 module.exports.orders = orders
 module.exports.orderByName = orderByName 
+module.exports.orderById = orderById 
 module.exports.pendingOrders = pendingOrders
 module.exports.completedOrders = completedOrders
 module.exports.createOrder = createOrder 

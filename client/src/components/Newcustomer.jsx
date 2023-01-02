@@ -29,12 +29,12 @@ const Newcustomer = () => {
       <form className='create__customer--form' onSubmit={handleSubmit}>
         <h2 className="form__top">Create customer</h2>
         <div className="input__group">
-        <span>Customer Name</span>
-        <input name='name' value={customer.name} onChange={handleName} type="text" placeholder='Enter Customer Name' required/>
+          <span>Customer Name</span>
+          <input name='name' value={customer.name} onChange={handleName} type="text" placeholder='Enter Customer Name' required/>
         </div>
         <div className="input__group">
-        <span>Address</span>
-        <input name='address' type="text"  value={customer.address} onChange={handleAddress} placeholder='Enter Customer Address' required/>
+          <span>Address</span>
+          <input name='address' type="text"  value={customer.address} onChange={handleAddress} placeholder='Enter Customer Address' required/>
         </div>
 
         <button type='submit'>Add customer</button>

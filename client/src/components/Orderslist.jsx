@@ -11,8 +11,8 @@ const Orderslist = () => {
     const [orderLists, setorderLists] = useState([])
     useEffect(() => {
         async function ordersByNAme(){
-            const result = await axios.get(`http://localhost:3000/api/orders/${name}`)
             try {
+                const result = await axios.get(`http://localhost:3000/api/orders/${name}`)
                 setorderLists(result.data)
             } catch (error) {
                 console.log(error)
