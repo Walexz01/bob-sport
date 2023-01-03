@@ -97,25 +97,25 @@
     transition: all .4s ease;
 
 }
-.order__action__links--group button:first-of-type{
+.order__action__links--group a:first-of-type{
     color: green;
     background: #b6f1b3;
     border: .1rem solid green;
 }
 
-.order__action__links--group button:first-of-type:hover{
+.order__action__links--group a:first-of-type:hover{
     background: green;
     color: #b6f1b3;
 }
 
 
-.order__action__links--group button:last-of-type{
+.order__action__links--group a:last-of-type{
     color: #c7585a;
     background: transparent;
-    border-color: #c7585a;
+    border: .1rem solid #c7585a;
 }
 
-.order__action__links--group button:last-of-type:hover{
+.order__action__links--group a:last-of-type:hover{
     color: #fff;
     background: #c7585a;
     border-color: #c7585a;

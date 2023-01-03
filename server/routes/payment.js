@@ -1,12 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const {makePayment,Payments} = require('../data/payment')
+const {makePayment,Payments,approveOrder,rejectOrder} = require('../data/payment')
 
 router.get('/',async (req,res)=>{
     const result =  await Payments()
     res.send(result)
 })
 
+router.put('/rejectorder/:order_id', async (req,res)=>{
+    const  order_id = req.params.order_id
+    await rejectOrder(order_id)
+    res.send('done')
+
+})
+
+router.put('/approveorder/:order_id', async (req,res)=>{
+    const  order_id = req.params.order_id
+    await approveOrder(order_id)
+    res.send('done')
+
+})
 
 router.post('/:orderid',async (req,res)=>{
     const order_id = req.params.orderid

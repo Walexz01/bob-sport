@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const {orders,pendingOrders,completedOrders,orderByName,createOrder,addproducts} = require('../data/orders')
+const {orders,pendingOrders,completedOrders,orderByName,createOrder,addproducts, orderById} = require('../data/orders')
 
 // this is end point to get the lists of orders 
 router.get('/',async (req,res)=>{
@@ -30,6 +30,12 @@ router.get('/complete',async (req,res)=>{
 router.get('/:name', async (req,res)=>{
     let name = req.params.name
     const result = await orderByName(name)
+    res.send(result)
+})
+
+router.get('/getbyid/:id', async (req,res)=>{
+    let id = req.params.id
+    const result = await orderById(id)
     res.send(result)
 })
 

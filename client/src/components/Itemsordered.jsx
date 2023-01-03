@@ -2,14 +2,14 @@ import React from 'react'
 import { useEffect } from 'react'
 import Tablecontainer from '../UI/Tablecontainer'
 import axios from 'axios'
-import {  useParams } from 'react-router-dom'
+import {  Link, useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { GiCancel } from 'react-icons/gi'
 import { ImCheckmark } from 'react-icons/im'
 
 
 const Itemsordered = () => {
-
+    const navigate = useNavigate()
     const {id,name,date,t_amount,s_name,u_name}= useParams()
     const [orderedItems, setorderedItems] = useState([])
     const total_items = orderedItems.length
@@ -26,12 +26,21 @@ const Itemsordered = () => {
         getItems()
     }, [id])
 
-    const handleApprove = ()=>{
-        
+    const handleApprove = async ()=>{
+        try {
+            await axios.put(`http://localhost:3000/api/payments/approveorder/${id}`)
+        } catch (error) {
+            console.log(error)
+        }
     }
     
-    const handleReject = ()=>{
-
+    const handleReject = async()=>{
+        try {
+            await axios.put(`http://localhost:3000/api/payments/rejectorder/${id}`)
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
     
   return (
@@ -41,9 +50,9 @@ const Itemsordered = () => {
             <h2>Order Details</h2>
             {
                 (s_name === 'pending') ? <div className="order__action__links--group">
-                        <button className='order__btn' onClick={handleApprove}><ImCheckmark/> Approve</button>
-                        <button className='order__btn' onClick={handleReject}><GiCancel/> Reject</button>
-                    </div> : (s_name === 'completed') ? <h2 className='order__btn order__detail--completed'>completed</h2> : <h2 className='order__detail order__detail--cancel '>cancel</h2>
+                        <Link className='order__btn' to={`/orders/payment/create/${id}`} onClick={handleApprove}><ImCheckmark/> Approve</Link>
+                        <Link className='order__btn' to={`/orders`} onClick={handleReject}><GiCancel/> Reject</Link>
+                    </div> : (s_name === 'completed') ? <h2 className='order__btn order__detail--completed'>completed</h2> : <h2 className='order__btn order__detail--cancel '>canceled</h2>
             }
             
            

@@ -48,7 +48,7 @@ async function orderById(order_id) {
                     status s ON o.status_id = s.id
                     JOIN users u
                     ON u.id = o.user_id
-                    WHERE customer_id = ?
+                    WHERE o.id = ?
                     `
     const [result] = await pool.query(query,[order_id])
     return result
