@@ -2,8 +2,10 @@ import React from 'react'
 import { useEffect } from 'react'
 import Tablecontainer from '../UI/Tablecontainer'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { useState } from 'react'
+import { GiCancel } from 'react-icons/gi'
+import { ImCheckmark } from 'react-icons/im'
 
 
 const Itemsordered = () => {
@@ -23,19 +25,28 @@ const Itemsordered = () => {
         }
         getItems()
     }, [id])
+
+    const handleApprove = ()=>{
+        
+    }
+    
+    const handleReject = ()=>{
+
+    }
     
   return (
     <div className='items__ordered--container'>
         <div className="items__order--top orders__details--top">
         <div className="orders__details--top--group">
             <h2>Order Details</h2>
-            <div className="order__action--group">
-                <div className="title">Actions</div>
-                    <div className="action__links">
-                        <small>Approve</small>
-                        <small>Reject</small>
-                    </div>
-            </div>
+            {
+                (s_name === 'pending') ? <div className="order__action__links--group">
+                        <button className='order__btn' onClick={handleApprove}><ImCheckmark/> Approve</button>
+                        <button className='order__btn' onClick={handleReject}><GiCancel/> Reject</button>
+                    </div> : (s_name === 'completed') ? <h2 className='order__btn order__detail--completed'>completed</h2> : <h2 className='order__detail order__detail--cancel '>cancel</h2>
+            }
+            
+           
         </div>
 
             <div className="items__order--bottom orders__details--bottom">
@@ -96,6 +107,13 @@ const Itemsordered = () => {
                             })
                         }
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td  className='total_amount_col'>Total</td>
+                            <td colSpan="3"></td>
+                            <td className='price'>${t_amount}</td>
+                        </tr>
+                    </tfoot>
                 </table>
 
         </Tablecontainer>

@@ -137,7 +137,7 @@ table tr::before{
     right: 0;
     bottom: 0;
 }
-table tbody tr:last-child::before{
+table tbody tr:last-child::before, table tfoot tr:last-child::before{
     height: 0;
     width: 0;
 

@@ -285,3 +285,9 @@ nav{
 .page__details--link:hover{
   box-shadow: none;
 }
+.total_amount_col,.price{
+  color: black;
+  font-family: DM Sans,sans-serif!important;
+  font-weight: 700;
+
+}
