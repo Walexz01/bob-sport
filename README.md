@@ -2,7 +2,55 @@
 
 ![1672441944854](image/README/1672441944854.png)
 
-# Getting Started with Create React App
+# 🛠️ Technology  Stack![img](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/express-original-wordmark.svg?nonce%3D1672848583488)![img](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/git-original-wordmark.svg?nonce%3D1672848583488)![](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/nodejs-original-wordmark.svg?nonce%3D1672848583489)![](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/npm-original-wordmark.svg?nonce%3D1672848583489)![](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/react-original-wordmark.svg?nonce%3D1672848583489)![](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/css3-original-wordmark.svg?nonce%3D1672848583488)
+
+# How to get the project running locally
+
+1. Fork [this]() repository.   ![img](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/HP/Desktop/Screenshot%202023-01-04%20171924.jpg?nonce%3D1672849220136)
+2. Clone your forked copy of the project.
+
+   ```
+   git clone https://github.com/<your_name>/bob-sport.git
+   ```
+3. open in vscode the folder from your terminal
+
+   ```
+   code . 
+   ```
+4. Navigate to the client folder  📁 .
+
+   ```
+   cd client
+   ```
+5. Install the dependencies:
+
+   ```
+   npm install
+   ```
+6. Navigate to the server folder  📁 .
+
+   ```
+   cd server
+   ```
+7. Install the dependencies:
+
+   ```
+   npm install
+   ```
+8. Start the server:
+
+   ```
+   npm start
+   ```
+9. Navigate to the client folder and start:
+
+   ```
+   npm start
+   ```
+
+# Getting Started 
+
+# with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -24,7 +24,7 @@ const Itemsordered = () => {
         }
         getItems()
     }, [id])
-    
+
     const handleReject = async()=>{
         try {
             await axios.put(`http://localhost:3000/api/payments/rejectorder/${id}`)

@@ -18,7 +18,7 @@ const Createpay = () => {
     useEffect(() => {
       async function getOrderById(){
         try {
-            const result = await axios.get(`http://localhost:3000/api/orders/getbyid/85`)
+            const result = await axios.get(`http://localhost:3000/api/orders/getbyid/${id}`)
             setorderDetails(result.data)                
         } catch (error) {
             console.log(error)
@@ -32,7 +32,6 @@ const Createpay = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault()
         try {
-            await axios.put(`http://localhost:3000/api/payments/approveorder/${id}`)
             await axios.post(`http://localhost:3000/api/payments/${id}`,input)
             setInput({method_name:'',amount: ''})
             navigate('/orders')
