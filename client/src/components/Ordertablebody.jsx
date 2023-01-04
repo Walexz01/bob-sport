@@ -10,7 +10,6 @@ const Ordertablebody = () => {
   const list = ordersLists.sort((a,b) =>{
    return b.id - a.id
   })
-  console.log(list)
   useEffect(() => {
     async function getOrders(){
       try {
