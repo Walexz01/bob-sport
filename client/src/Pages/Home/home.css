@@ -78,6 +78,7 @@ text-align: center;
 
 /* table__container */
 .table__container{
+    user-select: none;
     background: #fff;
     border-radius: var(--card__radius);
     padding: 1rem;

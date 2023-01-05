@@ -1,21 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Customerbody = ({customerList,input}) => {
+
+const Customerbody = ({customerList}) => {
     
   return (
     <>
         <tbody>
         {
-            customerList.filter(customers => {
-                if (input === '') {
-                return customers;
-                } else if (customers.customer_name.toLowerCase().includes(input.toLowerCase()) || customers.id === Number(input)) {
-                return customers;
-                }else{
-                    return ''
-                }
-            }).map(({id,customer_name,address,registration_date,})=>{
+         customerList.map(({id,customer_name,address,registration_date,})=>{
                  let dateTime = registration_date
                  const date = dateTime.slice(0,10)
                  const time = dateTime.slice(11,19)
@@ -34,7 +27,6 @@ const Customerbody = ({customerList,input}) => {
             }
 
             </tbody>
-
     </>
   )
 }

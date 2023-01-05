@@ -28,7 +28,6 @@ const Createpay = () => {
     
     }, [id])
 
-    console.log(input)
     const handleSubmit = async(e) =>{
         e.preventDefault()
         try {

@@ -289,5 +289,38 @@ nav{
   color: black;
   font-family: DM Sans,sans-serif!important;
   font-weight: 700;
-
+}
+/* ================ pagination styles ====================   */
+.pag_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.6rem;
+  color: blue;
+  font-weight: 800;
+}
+.pagination{
+  display: flex;
+  overflow: hidden;
+  border: .05rem solid blue;
+  align-items: center;
+  border-radius: .4rem;
+}
+li.page-item{
+  border-left: .05rem solid blue;
+  width: 3rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li.page-item:first-of-type{
+  border-width: 0;
+}
+.active-pag{
+  background: blue;
+  color: white;
 }
