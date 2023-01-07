@@ -4,7 +4,7 @@ import Paymenttable from '../../Tables/Paymenttable'
 import "./payments.css"
 
 const Payments = () => {
-  
+
   return (
     <div className='payments__page__conatiner'>
       <Pagetop className='payments__page' title="Payments List"/>

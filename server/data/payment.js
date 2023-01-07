@@ -30,7 +30,7 @@ async function makePayment(order_id,method_name,amount) {
 
 async function payments() {
     const query= `SELECT 
-                        p.id AS payment_id,
+                        p.id AS id,
                         p.order_id,
                         c.customer_name,
                         pm.name AS payment_method,

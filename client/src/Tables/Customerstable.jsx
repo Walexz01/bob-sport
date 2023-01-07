@@ -7,6 +7,8 @@ import { useState } from 'react'
 import Pagination from '../Utility/Pagination'
 import Searchinput from '../Utility/Searchinput'
 
+import { filterItems } from '../Utility/Filterfunc'
+import { sliceData } from '../Utility/sliceDataFunc'
 
 const Customerstable = () => {
   //  this is the state the manage the user inputs
@@ -34,21 +36,15 @@ const Customerstable = () => {
         setInput(e.target.value)
       }
 //  this store the filtered customerList based on thr user input
-      const filtered = customerList.filter(customers => {
-        if (input === '') {
-        return customers;
-        } else if ( customers.customer_name.toLowerCase().includes(input.toLowerCase()) || customers.id === Number(input)) {
-        return customers;
-        }else{
-            return ''
-        }
-      })
+// this is a fuction that filters the list of the customersbased on the input and return an array of objects
+    const filtered = filterItems(customerList,input)
 
       // this is used to store the length of the fiiltered list of customers
       const count = filtered.length
       // tthis is the number of that to be diplayed per page
       const pageSize  = 15
-    const slicedCustomer = filtered.slice(currentPage * pageSize - pageSize , currentPage * pageSize   )
+      // this is a fuction that can be found the util folder itt takes in the filtered object and return a sliced array of object base on the result length vs pageSize 
+    const slicedCustomer = sliceData(filtered,currentPage,pageSize)
   return (
     <>
         <Tablecontainer className='customer__table__container'>
