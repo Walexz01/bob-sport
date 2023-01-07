@@ -3,9 +3,9 @@ import Customerbody from '../components/Customerbody'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Tablecontainer from '../UI/Tablecontainer'
-import {BiSearch} from 'react-icons/bi'
 import { useState } from 'react'
 import Pagination from '../Utility/Pagination'
+import Searchinput from '../Utility/Searchinput'
 
 
 const Customerstable = () => {
@@ -52,11 +52,8 @@ const Customerstable = () => {
   return (
     <>
         <Tablecontainer className='customer__table__container'>
-          <div className="customer__table__container--top">
-            <div className="input__group">
-              <BiSearch/>
-              <input type="search" name='search' value={input} onChange={handleInput} placeholder='Search....' />
-            </div>
+          <div className="search__input__container">
+            <Searchinput input={input} handleInput={handleInput}/>
           </div>
           <table className='customer__table'>
             <thead>

@@ -30,11 +30,14 @@ async function makePayment(order_id,method_name,amount) {
 
 async function payments() {
     const query= `SELECT 
+                        p.id AS payment_id,
                         p.order_id,
                         c.customer_name,
                         pm.name AS payment_method,
-                        p.amount AS paid,
-                        s.name AS status_name
+                        p.amount AS amount_paid,
+                        s.name AS status_name,
+                        u.user_name AS seller_name,
+                        p.date AS payment_date
                     FROM
                         payments p
                             JOIN
@@ -43,6 +46,8 @@ async function payments() {
                         customers c ON o.customer_id = c.id
                         JOIN payment_methods pm
                         ON p.method_id = pm.id
+                        JOIN users u
+                        ON u.id = o.user_id
                         JOIN status s
                         ON o.status_id = s.id`;
     const [result] = await pool.query(query)

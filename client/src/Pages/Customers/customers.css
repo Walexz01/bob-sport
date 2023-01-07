@@ -1,13 +1,13 @@
 .customer__container{
     padding: 1rem;
 }
-.customer__table__container--top{
+.search__input__container{
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
 }
-.customer__table__container .input__group{
+.search__input__container .input__group{
     background-color: white;
     border: .2rem solid var(--color__muted);
     outline: none;
@@ -19,13 +19,13 @@
     margin-right: 2rem;
     position: relative;
 }
-.customer__table__container .input__group input{
+.search__input__container .input__group input{
     font-size: 1.2rem;
     border: none;
     padding: .2rem .4rem;
     outline: none;
 }
-.customer__table__container .input__group svg{
+.search__input__container .input__group svg{
     font-size: 1.3rem;
     color: var(--color__muted);
 }
