@@ -5,16 +5,16 @@ const Salestablebody = ({salesList}) => {
     <>
         <tbody>
             {
-               salesList.map(({Order_id,Product_Id,Product_Name,Quantity,Unit_Price,Order_Date}, index)=>{
+               salesList.map(({order_id,product_id,product_name,quantity,unit_price,total_price,order_date}, index)=>{
                 return(
             <tr key={index}>
-                <td>{Order_id} </td>
-                <td>{Product_Id} </td>
-                <td>{Product_Name} </td>
-                <td>{Quantity} </td>
-                <td>${Unit_Price} </td>
-                <td>${ Quantity * Unit_Price} </td>
-                <td>{Order_Date} </td>
+                <td>{order_id} </td>
+                <td>{product_id} </td>
+                <td>{product_name} </td>
+                <td>{quantity} </td>
+                <td>${unit_price} </td>
+                <td>${total_price} </td>
+                <td>{order_date} </td>
             </tr>
                 )
                }) 

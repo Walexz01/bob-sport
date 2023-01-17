@@ -5,75 +5,33 @@ import { useState } from 'react'
 import Searchinput from '../Utility/Searchinput'
 import { filterItems } from '../Utility/Filterfunc'
 import Pagination from '../Utility/Pagination'
+import axios from 'axios'
+
 import { sliceData } from '../Utility/sliceDataFunc'
+import { useEffect } from 'react'
 
 const Salestable = () => {
+    const [salesList, setSalesList] = useState([])
 
     const [input, setInput] = useState('')
 
     const [currentPage, setCurrentPage] = useState(1)
+    
     const handleInput = (e)=>{
         setInput(e.target.value)
       }
-      const salesList = [
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "shoe",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "racket",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "egg",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "Ball",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "Ball",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "Ball",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-        {
-          "Order_id": 1,
-          "Product_Id": 12,
-          "Product_Name": "Ball",
-          "Quantity": 10,
-          "Unit_Price": 33,
-        "Order_Date": 7787667766
-        },
-      ]
-    const filtered = filterItems(salesList, input,'Product_Name','Order_id','Product_Id')
+
+      useEffect(() => {
+
+        const getSales = async ()=>{
+            const result = await axios.get('http://localhost:3000/api/sales')
+           setSalesList(result.data)
+        }
+        getSales()
+      }, [])
+      
+
+    const filtered = filterItems(salesList, input,'product_name','order_id','product_id')
     const count = filtered.length
     const pageSize = 3
     const slicedSales = sliceData(filtered,currentPage, pageSize)
