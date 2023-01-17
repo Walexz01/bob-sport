@@ -1,6 +1,6 @@
 .home_page_container{
     display: grid;
-    grid-template-columns: auto 30rem;
+    grid-template-columns: auto 28rem;
     gap: 2rem;
     padding: 1rem;
 }
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     gap: .7rem;
-    height: 2.5rem;
+    height: 2rem;
 }
 .card__title span{
     font-size: 1.5rem;
@@ -43,7 +43,7 @@
 }
 
 .card__details{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 550;
 }
 .sold__products_cards .card__title span{
@@ -94,11 +94,11 @@ text-align: center;
     justify-content: space-between;
 }
 .table__container h2{
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .table__container--top a{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     border-bottom: .1rem dotted black;
 }
@@ -108,7 +108,7 @@ table{
     padding-top: .5rem;
     text-align: center;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
  table thead tr{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -124,7 +124,7 @@ table tbody tr{
     height: 2.5rem;
 }
 table tr small{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: inline-block;
     width: 6.5rem;
 }

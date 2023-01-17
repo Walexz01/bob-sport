@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 .order__links--list a{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: black;
     padding: .7rem ;
     font-weight: 500;
@@ -87,7 +87,7 @@
     color: black;
 }
 .order__btn{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
     display: flex;
     gap: .7rem;
@@ -154,7 +154,7 @@
     padding: 4rem 1rem 2rem 1rem;
 }
 .create__payment--top{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #2B3467;
     font-weight: 400;
     padding-bottom: 1rem;
@@ -170,7 +170,7 @@
     margin: 1rem 0 1rem 0;
 }
 .create__payment--detail--group.total span{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -182,7 +182,7 @@
 
 }
 .payment__method--title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #2B3467;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -199,7 +199,7 @@
     border: .1rem solid #BAD7E9;
     overflow: hidden;
     border-radius: var(--card__radius);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     transition: all .2s ease;
     margin-bottom: 1rem;
 }
