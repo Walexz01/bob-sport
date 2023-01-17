@@ -32,7 +32,7 @@ const Paymenttable = () => {
       setinput(e.target.value)
     }
     // this is the variable used to store the valuue returned from the filter object fuction
-    const filtered = filterItems(paymentList,input)
+    const filtered = filterItems(paymentList,input,'customer_name','id','order_id')
 // this is the total number of list that can be display per pages
     const pageSize = 20;
     //  this is the length of the filtered data

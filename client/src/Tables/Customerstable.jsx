@@ -37,7 +37,7 @@ const Customerstable = () => {
       }
 //  this store the filtered customerList based on thr user input
 // this is a fuction that filters the list of the customersbased on the input and return an array of objects
-    const filtered = filterItems(customerList,input)
+    const filtered = filterItems(customerList,input,'customer_name','id')
 
       // this is used to store the length of the fiiltered list of customers
       const count = filtered.length

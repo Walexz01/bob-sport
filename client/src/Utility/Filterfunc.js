@@ -1,8 +1,8 @@
-export const filterItems= (list,input)=> {
+export const filterItems= (list,input,filterString, filterNo1,filterNo2)=> {
     const filtered = list.filter(list => {
         if (input === '') {
         return list;
-        } else if ( list.customer_name.toLowerCase().includes(input.toLowerCase()) || list.id === Number(input) || list.order_id === Number(input)) {
+        } else if ( list[filterString].toLowerCase().includes(input.toLowerCase()) || list[filterNo1] === Number(input) || list[filterNo2] === Number(input)) {
         return list;
         }else{
             return ''
