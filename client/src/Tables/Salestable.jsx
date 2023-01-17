@@ -4,11 +4,14 @@ import Tablecontainer from '../UI/Tablecontainer'
 import { useState } from 'react'
 import Searchinput from '../Utility/Searchinput'
 import { filterItems } from '../Utility/Filterfunc'
+import Pagination from '../Utility/Pagination'
+import { sliceData } from '../Utility/sliceDataFunc'
 
 const Salestable = () => {
 
     const [input, setInput] = useState('')
 
+    const [currentPage, setCurrentPage] = useState(1)
     const handleInput = (e)=>{
         setInput(e.target.value)
       }
@@ -71,6 +74,10 @@ const Salestable = () => {
         },
       ]
     const filtered = filterItems(salesList, input,'Product_Name','Order_id','Product_Id')
+    const count = filtered.length
+    const pageSize = 3
+    const slicedSales = sliceData(filtered,currentPage, pageSize)
+
   return (
     <>
     <Tablecontainer className='sales__table__conatiner'>
@@ -89,8 +96,9 @@ const Salestable = () => {
                 <th>Order Date</th>
               </tr>
             </thead>
-            <Salestablebody salesList={filtered}/>
+            <Salestablebody salesList={slicedSales}/>
           </table>
+          <Pagination count={count} pageSize={pageSize}  currentPage= {currentPage} setCurrentPage={setCurrentPage} />
       </Tablecontainer>
         
     </>
