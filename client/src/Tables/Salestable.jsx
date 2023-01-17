@@ -16,7 +16,7 @@ const Salestable = () => {
         {
           "Order_id": 1,
           "Product_Id": 12,
-          "Product_Name": "Ball",
+          "Product_Name": "shoe",
           "Quantity": 10,
           "Unit_Price": 33,
         "Order_Date": 7787667766
@@ -24,7 +24,7 @@ const Salestable = () => {
         {
           "Order_id": 1,
           "Product_Id": 12,
-          "Product_Name": "Ball",
+          "Product_Name": "racket",
           "Quantity": 10,
           "Unit_Price": 33,
         "Order_Date": 7787667766
@@ -32,7 +32,7 @@ const Salestable = () => {
         {
           "Order_id": 1,
           "Product_Id": 12,
-          "Product_Name": "Ball",
+          "Product_Name": "egg",
           "Quantity": 10,
           "Unit_Price": 33,
         "Order_Date": 7787667766
@@ -70,8 +70,7 @@ const Salestable = () => {
         "Order_Date": 7787667766
         },
       ]
-    // const filtered = filterItems(salesList, input)
-    // console.log(filtered)
+    const filtered = filterItems(salesList, input,'Product_Name','Order_id','Product_Id')
   return (
     <>
     <Tablecontainer className='sales__table__conatiner'>
@@ -90,7 +89,7 @@ const Salestable = () => {
                 <th>Order Date</th>
               </tr>
             </thead>
-            <Salestablebody salesList={salesList}/>
+            <Salestablebody salesList={filtered}/>
           </table>
       </Tablecontainer>
         
