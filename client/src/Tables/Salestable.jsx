@@ -5,14 +5,10 @@ import { useState } from 'react'
 import Searchinput from '../Utility/Searchinput'
 import { filterItems } from '../Utility/Filterfunc'
 import Pagination from '../Utility/Pagination'
-import axios from 'axios'
 
 import { sliceData } from '../Utility/sliceDataFunc'
-import { useEffect } from 'react'
 
-const Salestable = () => {
-    const [salesList, setSalesList] = useState([])
-
+const Salestable = ({salesList}) => {
     const [input, setInput] = useState('')
 
     const [currentPage, setCurrentPage] = useState(1)
@@ -20,20 +16,12 @@ const Salestable = () => {
     const handleInput = (e)=>{
         setInput(e.target.value)
       }
-
-      useEffect(() => {
-
-        const getSales = async ()=>{
-            const result = await axios.get('http://localhost:3000/api/sales')
-           setSalesList(result.data)
-        }
-        getSales()
-      }, [])
+    
       
 
     const filtered = filterItems(salesList, input,'product_name','order_id','product_id')
     const count = filtered.length
-    const pageSize = 3
+    const pageSize = 30
     const slicedSales = sliceData(filtered,currentPage, pageSize)
 
   return (
@@ -52,6 +40,7 @@ const Salestable = () => {
                 <th>Unit Price</th>
                 <th>Total Price</th>
                 <th>Order Date</th>
+                <th>Order Time</th>
               </tr>
             </thead>
             <Salestablebody salesList={slicedSales}/>
