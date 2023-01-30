@@ -9,16 +9,23 @@ import Pagination from '../Utility/Pagination'
 import { sliceData } from '../Utility/sliceDataFunc'
 
 const Salestable = ({salesList}) => {
+  
     const [input, setInput] = useState('')
-
     const [currentPage, setCurrentPage] = useState(1)
-    
+    const [sortById, setsortById] = useState(false)
+    const [sortByPrice, setsortByPrice] = useState(false)
+
     const handleInput = (e)=>{
         setInput(e.target.value)
       }
     
-      
-
+      if(sortById){
+        salesList = salesList.sort((a,b)=> b.order_id - a.order_id)
+      }else if(sortByPrice){
+        salesList = salesList.sort((a,b)=> b.total_price - a.total_price)
+      }else{
+        salesList = salesList.sort((a,b)=> a.order_id - b.order_id)
+      }
     const filtered = filterItems(salesList, input,'product_name','order_id','product_id')
     const count = filtered.length
     const pageSize = 30
@@ -33,12 +40,16 @@ const Salestable = ({salesList}) => {
           <table className='sales__table'>
             <thead>
               <tr>
-                <th>Order id</th>
-                <th>Product Id</th>
+                <th onClick={()=> {setsortById(prev => !prev)
+                setsortByPrice(false)
+                } }>Order id { sortById ? 'up' : 'down' } </th>
+                <th >Product Id</th>
                 <th>Product Name</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
-                <th>Total Price</th>
+                <th  onClick={()=> {setsortByPrice(prev => !prev)
+                setsortById(false)
+                } } >Total Price { sortByPrice ? 'up' : 'down' }</th>
                 <th>Order Date</th>
                 <th>Order Time</th>
               </tr>

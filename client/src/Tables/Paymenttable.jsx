@@ -51,10 +51,12 @@ const Paymenttable = () => {
                 <th>Id</th>
                 <th>Order Id</th>
                 <th>Customer Name</th>
+                <th>Seller Name</th>
                 <th>Amount Paid</th>
                 <th>Order Status</th>
                 <th>Seller Name</th>
                 <th>Payment Date</th>
+                <th>Payment Time</th>
                 <th>Payment Method</th>
               </tr>
             </thead>
