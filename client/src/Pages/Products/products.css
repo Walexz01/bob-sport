@@ -1,0 +1,29 @@
+.product__container{
+    padding: 1rem;
+}
+.product__bottom{
+    margin-top: 1.3rem;
+}
+.product__table{
+    margin-top: 1rem;
+}
+.product__options{
+    position: relative;
+}
+.product__more{
+    position: absolute;
+    top: 0;
+    left: -5.5rem;
+    gap: 1rem;
+    display: none;
+    box-shadow: var(--icon__shadow);
+    border-radius: .3rem;
+    padding: 1rem 0;
+    background: white;
+    flex-direction: column;
+    transition: all 2s ease;
+    z-index: 22;
+}
+.option__open{
+    display: flex;
+}

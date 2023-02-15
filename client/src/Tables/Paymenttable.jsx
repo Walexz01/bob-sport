@@ -8,15 +8,21 @@ import Pagination from '../Utility/Pagination'
 import Searchinput from '../Utility/Searchinput'
 import { filterItems } from '../Utility/Filterfunc'
 import { sliceData } from '../Utility/sliceDataFunc'
+import {BsChevronDown} from 'react-icons/bs'
+import {BsChevronUp} from 'react-icons/bs'
+
 
 
 const Paymenttable = () => {
   // this stores the the list of payments fetch from the database
-  const [paymentList, setPaymentList] = useState([])
+  let [paymentList, setPaymentList] = useState([])
   // this stores the input 
   const [input, setinput] = useState('')
   // this is used to store the current page that a user is on
   const [currentPage, setCurrentPage] = useState(1)
+
+  const [sortById, setsortById] = useState(false)
+  const [sortByPrice, setsortByPrice] = useState(false)
 
   useEffect(() => {
      async function getPaymentLists() {
@@ -26,6 +32,14 @@ const Paymenttable = () => {
       }
       getPaymentLists()
   }, [])
+
+  if(sortById){
+    paymentList = paymentList.sort((a,b)=> b.order_id - a.order_id)
+  }else if(sortByPrice){
+    paymentList = paymentList.sort((a,b)=> b.total_price - a.total_price)
+  }else{
+    paymentList = paymentList.sort((a,b)=> a.order_id - b.order_id)
+  }
   
   // this is the fuction used to update the state of the input to the current value of the input element
     const handleInput = (e)=>{
@@ -48,11 +62,15 @@ const Paymenttable = () => {
           <table className='payments__table'>
             <thead>
               <tr>
-                <th>Id</th>
+                <th className="clickablehead" onClick={()=> {setsortById(prev => !prev)
+                setsortByPrice(false)
+                } }>Id { sortById ? <BsChevronUp /> : <BsChevronDown/>  }</th>
                 <th>Order Id</th>
                 <th>Customer Name</th>
                 <th>Seller Name</th>
-                <th>Amount Paid</th>
+                <th className="clickablehead" onClick={()=> {setsortByPrice(prev => !prev)
+                setsortById(false)
+                } } >Amount Paid { sortByPrice ? <BsChevronUp /> : <BsChevronDown/>  } </th>
                 <th>Order Status</th>
                 <th>Seller Name</th>
                 <th>Payment Date</th>

@@ -5,6 +5,8 @@ import { useState } from 'react'
 import Searchinput from '../Utility/Searchinput'
 import { filterItems } from '../Utility/Filterfunc'
 import Pagination from '../Utility/Pagination'
+import {BsChevronDown} from 'react-icons/bs'
+import {BsChevronUp} from 'react-icons/bs'
 
 import { sliceData } from '../Utility/sliceDataFunc'
 
@@ -40,16 +42,16 @@ const Salestable = ({salesList}) => {
           <table className='sales__table'>
             <thead>
               <tr>
-                <th onClick={()=> {setsortById(prev => !prev)
+                <th className="clickablehead" onClick={()=> {setsortById(prev => !prev)
                 setsortByPrice(false)
-                } }>Order id { sortById ? 'up' : 'down' } </th>
+                } }>Order id { sortById ? <BsChevronUp /> : <BsChevronDown/> } </th>
                 <th >Product Id</th>
                 <th>Product Name</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
-                <th  onClick={()=> {setsortByPrice(prev => !prev)
+                <th className="clickablehead" onClick={()=> {setsortByPrice(prev => !prev)
                 setsortById(false)
-                } } >Total Price { sortByPrice ? 'up' : 'down' }</th>
+                } } >Total Price { sortByPrice ? <BsChevronUp /> : <BsChevronDown/>  }</th>
                 <th>Order Date</th>
                 <th>Order Time</th>
               </tr>

@@ -4,3 +4,8 @@
 .sales__right{
     margin-top: 1.3rem;
 }
+.clickablehead svg{
+    color: black;
+    font-size: 1.2rem;
+    margin-left:  .3rem;
+}

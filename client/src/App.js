@@ -17,6 +17,7 @@ import Canceledorders from './components/Canceledorders';
 import Orderslist from './components/Orderslist';
 import Itemsordered from './components/Itemsordered';
 import Createpay from './components/Createpay';
+import NewProduct from './components/NewProduct';
 function App() {
 
   return (
@@ -49,6 +50,7 @@ function App() {
               <Route path='sales' element={<Sales/>}/>
               <Route path='payments' element={<Payments/>}/>
               <Route path='products' element={<Products/>}/>
+              <Route path='products/create' element={<NewProduct/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </div>
