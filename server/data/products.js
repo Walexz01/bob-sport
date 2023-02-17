@@ -42,9 +42,9 @@ LIMIT 10`
 
 //  This is to get the details of the products using their name
 
-async function getProductByName(name) {
-    const query =`SELECT * FROM products WHERE name = ?`
-    const [result] = await pool.query(query,[name])
+async function getProductByName(id) {
+    const query =`SELECT * FROM products WHERE id = ?`
+    const [result] = await pool.query(query,[id])
     return result
 }
 // getProductByName('football')
@@ -54,11 +54,11 @@ async function getProductByName(name) {
 //delete productt using their name
 //  This query is used to delete product from the database
 
-async function deleteProduct(name){
-    const query =`DELETE FROM products WHERE name = ?`
+async function deleteProduct(id){
+    const query =`DELETE FROM products WHERE id = ?`
 
 
-    const [result] = await pool.query(query,[name])
+    const [result] = await pool.query(query,[id])
 }
 
 
@@ -68,13 +68,13 @@ async function deleteProduct(name){
 //  update products 
 // this query is for updating  the products 
 
-async  function updateProducts(description,quantity_in_stock,unit_price,product_name) {
+async  function updateProducts(description,quantity_in_stock,unit_price,id) {
     const query = `UPDATE  products 
                         SET description = ?,
                          quantity_in_stock = ?,
                         unit_price = ? 
-                        WHERE name = ?`
-    const result = pool.query(query,[description,quantity_in_stock,unit_price,product_name])
+                        WHERE id = ?`
+    const result = pool.query(query,[description,quantity_in_stock,unit_price,id])
     
 }
 

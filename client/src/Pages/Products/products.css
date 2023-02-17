@@ -27,3 +27,6 @@
 .option__open{
     display: flex;
 }
+.delete{
+    color: red;
+}

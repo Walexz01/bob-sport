@@ -1,9 +1,10 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const NewProduct = () => {
+const Editproduct = () => {
+    const {id} = useParams()
   const navigate = useNavigate()
   const [products, setProducts] = useState({name:'',unit_price:'',description:'',quantity_in_stock:''})
 
@@ -20,11 +21,23 @@ const NewProduct = () => {
   const handleQuantity = (e)=>{
     setProducts({...products, quantity_in_stock:e.target.value})
   }
+  useEffect(() => {
+    const loadList = async() =>{
+        try {
+            const result = await axios.get(`http://localhost:3000/api/products/${id}`)
+            const data =result.data[0]
+            setProducts(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    loadList()
+  }, [id])
+  
   const handleSubmit = async (event)=>{
     event.preventDefault();
     try {
-      await axios.post(`http://localhost:3000/api/products`,products)
-      setProducts({name:'',unit_price:'',description:'',quantity_in_stock:''})
+      await axios.put(`http://localhost:3000/api/products/${id}`,products)
       navigate('/products')
     } catch (error) {
       console.log(error)
@@ -33,10 +46,10 @@ const NewProduct = () => {
   return (
     <div className='create__customer--container'>
       <form className='create__customer--form' onSubmit={handleSubmit}>
-        <h2 className="form__top">Add Product </h2>
+        <h2 className="form__top">Edit Product </h2>
         <div className="input__group">
           <span>Name</span>
-          <input name='name' value={products.name} onChange={handleName} type="text" placeholder='Enter Product Name' required/>
+          <input disabled name='name' value={products.name} onChange={handleName} type="text" placeholder='Enter Product Name' required/>
         </div>
         <div className="input__group">
           <span>Price</span>
@@ -52,11 +65,11 @@ const NewProduct = () => {
         </div>
 
 
-        <button type='submit'>Add customer</button>
+        <button type='submit'>Update customer</button>
       </form>
       
     </div>
   )
 }
 
-export default NewProduct
+export default Editproduct
